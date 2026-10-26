@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Phantom Chat – Fastest No Login Chat of All Time</title>
+    <meta name="title" content="Phantom Chat – Fastest No Login Chat of All Time" />
+    <meta name="description" content="Phantom Chat is a lightning-fast anonymous chat with no login, no phone number, and no email. Create self-destructing private rooms instantly." />
+    <meta name="keywords" content="Phantom Chat, ephemeral private chat rooms, self-destructing chat, terminal messaging, anonymous chat no registration, zero identity messenger, sync browser pairing, in-memory file transfer, no tracking cookies, PWA chat" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://phantomchat.space/" />
+    
+    <!-- OpenGraph Meta Tags for WhatsApp, Discord, and Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Phantom Chat" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://phantomchat.space/" />
+    <meta property="og:title" content="Phantom Chat – Fastest No Login Chat of All Time" />
+    <meta property="og:description" content="Phantom Chat is a lightning-fast anonymous chat with no login, no phone number, and no email. Create self-destructing private rooms instantly." />
+    <meta property="og:image" content="https://phantomchat.space/og-banner.png" />
+    <meta property="og:image:secure_url" content="https://phantomchat.space/og-banner.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Phantom Chat — Ephemeral Private Chat Rooms That Self-Destruct" />
+
+    <!-- Twitter / X Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://phantomchat.space/" />
+    <meta name="twitter:title" content="Phantom Chat – Fastest No Login Chat of All Time" />
+    <meta name="twitter:description" content="Phantom Chat is a lightning-fast anonymous chat with no login, no phone number, and no email. Create self-destructing private rooms instantly." />
+    <meta name="twitter:image" content="https://phantomchat.space/og-banner.png" />
+    <meta name="twitter:image:alt" content="Phantom Chat — Ephemeral Private Chat Rooms That Self-Destruct" />
+
+    <meta name="theme-color" content="#000000" />
+    
+    <!-- PWA Manifest & Icons -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    
+    <!-- Preconnect logic for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Cloudflare Turnstile API Script -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <!-- WebApplication JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Phantom Chat",
+      "alternateName": ["PhantomChat", "Phantom Chat Terminal"],
+      "url": "https://phantomchat.space/",
+      "applicationCategory": "CommunicationApplication",
+      "operatingSystem": "Web, iOS, Android, Windows, macOS, Linux",
+      "browserRequirements": "Requires JavaScript and HTML5 WebSocket support",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free anonymous ephemeral terminal chat rooms with zero registration and zero persistent storage."
+      },
+      "description": "Ephemeral private chat rooms that self-destruct. Terminal messaging with no registration, no phone numbers, no emails, and no tracking cookies.",
+      "featureList": [
+        "Sync Browser (6-digit pairing code)",
+        "In-Memory Transit (chunked file transfers over WebSockets with zero persistent storage)",
+        "Self-Destruct Rooms (volatile memory cleared on countdown expiry)",
+        "Zero Identity (no registration, no phone numbers, no emails, no tracking cookies)",
+        "Progressive Web App (PWA) Support"
+      ],
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "name": "Phantom Chat Terminal",
+          "url": "https://phantomchat.space/"
+        },
+        {
+          "@type": "FAQPage",
+          "name": "Phantom Chat FAQ",
+          "url": "https://phantomchat.space/faq"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Ideas & Negotiation Hub",
+          "url": "https://phantomchat.space/ideas"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Verified Peer Contacts & Handshakes",
+          "url": "https://phantomchat.space/friends"
+        }
+      ]
+    }
+    </script>
+
+    <!-- FAQPage JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I maintain anonymity on Phantom Chat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Phantom Chat is built from the ground up to require zero personal details — no phone numbers, no emails, and no account registrations. When you join, your device receives a temporary device code on the fly to establish encrypted sessions without exposing your physical identity."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you log my IP address or chat history on your servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All room directories and message-routing tables are kept strictly in ephemeral memory and are never written to disk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is my data kept, and when is it deleted?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All messages and attachments exist solely within active session memory and self-destruct once your room timer expires. When a room crumbles, active session memory is permanently purged."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I start a new session or join an existing chat room?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply select your operative alias and profile preference, configure a custom room countdown slider, or paste an active incoming room code. You will instantly breach the secure terminal gate without any tedious registration steps."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Early Error Guard for Cross-Origin Script Errors in Sandboxed Environments -->
+    <script>
+      (function() {
+        function suppressCrossOriginError(e) {
+          var msg = e ? (e.message || e.reason) : '';
+          var msgStr = typeof msg === 'string' ? msg : (msg && msg.message ? msg.message : '');
+          if (!msgStr || msgStr === "Script error." || msgStr === "Script error" || msgStr.indexOf("Script error") !== -1 || (!e.filename && !e.lineno && !e.error)) {
+            if (e.preventDefault) e.preventDefault();
+            if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+            return true;
+          }
+        }
+        window.onerror = function(msg, url, line, col, error) {
+          if (!msg || msg === "Script error." || msg === "Script error" || (!url && !line)) {
+            return true;
+          }
+        };
+        window.addEventListener('error', suppressCrossOriginError, true);
+        window.addEventListener('unhandledrejection', suppressCrossOriginError, true);
+      })();
+    </script>
+
+    <!-- Early PWA Prompt Capture -->
+    <script>
+      window.deferredPrompt = null;
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        window.deferredPrompt = e;
+        console.log('Early Capture: PWA beforeinstallprompt event saved to window.deferredPrompt');
+        if (typeof window.onDeferredPromptReceived === 'function') {
+          window.onDeferredPromptReceived(e);
+        }
+      });
+    </script>
+
+  </head>
+  <body class="bg-black text-white selection:bg-[#00FFFF]/30 overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Service Worker Registration & PWA Update Handler -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          try {
+            var isIframe = window.self !== window.top;
+            if (isIframe) {
+              console.log('Skipping Service Worker registration inside sandboxed iframe preview.');
+              return;
+            }
+
+            // updateViaCache: 'none' tells the browser to ALWAYS re-fetch /sw.js
+            // via HTTP (bypassing the browser's own SW script cache). Without this,
+            // the browser may serve a cached copy of sw.js and the byte-diff check
+            // never detects a new version — meaning update checks silently fail.
+            navigator.serviceWorker.register('/sw.js', { scope: '/', updateViaCache: 'none' })
+              .then((reg) => {
+                window.__swRegistration = reg;
+                window.dispatchEvent(new CustomEvent('sw-registered', { detail: reg }));
+                console.log('Phantom Chat Service Worker registered:', reg.scope);
+
+                // If a new worker is already waiting (e.g. installed in a previous tab),
+                // surface the update prompt immediately.
+                if (reg.waiting) {
+                  window.dispatchEvent(new CustomEvent('sw-update-waiting', { detail: reg }));
+                }
+
+                // Watch for a new worker entering the installing -> installed lifecycle.
+                reg.addEventListener('updatefound', () => {
+                  var newWorker = reg.installing;
+                  if (newWorker) {
+                    newWorker.addEventListener('statechange', () => {
+                      // 'installed' + an existing controller means there is a waiting worker
+                      // ready to take over on the next navigation or SKIP_WAITING signal.
+                      if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        window.dispatchEvent(new CustomEvent('sw-update-waiting', { detail: reg }));
+                      }
+                    });
+                  }
+                });
+
+                // Trigger an explicit update check 3 s after initial load so that a newly
+                // deployed sw.js is detected on first visit after a deploy, not just after
+                // the browser's 24-hour background update interval.
+                setTimeout(function() {
+                  reg.update().catch(function() {});
+                }, 3000);
+
+                // Also re-check whenever the user returns to the tab / foreground.
+                document.addEventListener('visibilitychange', function() {
+                  if (document.visibilityState === 'visible') {
+                    reg.update().catch(function() {});
+                  }
+                });
+              })
+              .catch((err) => console.warn('Service Worker registration skipped:', err));
+          } catch (e) {
+            console.warn('Service Worker registration exception:', e);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
+
