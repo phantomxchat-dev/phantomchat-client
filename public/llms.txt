@@ -1,0 +1,14 @@
+# Phantom Chat
+
+Phantom Chat is a lightning-fast anonymous ephemeral chat with no login, no phone number, and no email required. Create self-destructing private rooms instantly.
+
+Website: https://phantomchat.space
+
+Key features:
+- Instant anonymous chat rooms with zero registration
+- No login, no account, no signup required
+- No phone number, no email, no tracking cookies
+- Self-destructing rooms that expire automatically after countdown
+- Progressive Web App (PWA) support
+- Identity-less communication with deterministic device DNA
+- Zero persistent storage of messages or chat history
