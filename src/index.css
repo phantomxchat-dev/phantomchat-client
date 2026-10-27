@@ -1,0 +1,301 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-cyber: "Space Grotesk", sans-serif;
+}
+
+/* Design Tokens & Theme Foundation */
+:root {
+  --bg-canvas: #090a0f;
+  --bg-surface: #0f121a;
+  --bg-surface-elevated: #151a26;
+  --bg-surface-active: #1c2233;
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-accent: rgba(0, 191, 255, 0.35);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+
+  --accent-cyan: #00bfff;
+  --accent-cyan-hover: #38bdf8;
+  --accent-magenta: #ec4899;
+  --status-emerald: #10b981;
+  --status-amber: #f59e0b;
+  --status-rose: #f43f5e;
+}
+
+/* Layer utilities */
+@layer utilities {
+  .text-glow-blue {
+    text-shadow: none !important;
+  }
+  .text-glow-pink {
+    text-shadow: none !important;
+  }
+  .text-glow-gold {
+    text-shadow: none !important;
+  }
+  .shadow-glow-blue {
+    box-shadow: 0 4px 20px -2px rgba(0, 191, 255, 0.25);
+  }
+  .shadow-glow-pink {
+    box-shadow: 0 4px 20px -2px rgba(236, 72, 153, 0.25);
+  }
+  .border-glow-blue {
+    border-color: rgba(0, 191, 255, 0.5) !important;
+  }
+  .border-glow-pink {
+    border-color: rgba(236, 72, 153, 0.5) !important;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none !important;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+}
+
+/* Global Base */
+html, body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  height: 100dvh;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ghost Dissolve Self-Destruct trigger style */
+.ghost-dissolve {
+  animation: dissolve-animation 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+}
+
+@keyframes dissolve-animation {
+  0% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    filter: blur(4px);
+    transform: scale(0.99);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(16px);
+    transform: scale(0.96);
+  }
+}
+
+/* Quiet Dark Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 191, 255, 0.35);
+}
+
+/* ------------------------------------------------------------------ */
+/* Glassmorphism UI — dark translucent surfaces                       */
+/* ------------------------------------------------------------------ */
+/* Semi-transparent dark panels with backdrop blur, restrained cyan    */
+/* edge highlights, and fine low-contrast borders. The animated        */
+/* Three.js background shows through while text and controls stay      */
+/* crisp and readable.                                                 */
+/* ------------------------------------------------------------------ */
+
+.glass-panel {
+  background: rgba(13, 16, 23, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.6);
+}
+
+.glass-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 191, 255, 0.12) 0%,
+    rgba(0, 191, 255, 0.02) 50%,
+    rgba(0, 174, 200, 0.08) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.glass-card {
+  background: rgba(15, 18, 26, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-border {
+  background: rgba(15, 18, 26, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.35);
+}
+
+.glass-chat-bubble {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.glass-chat-bubble:hover {
+  border-color: rgba(0, 191, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.glass-input {
+  background: rgba(20, 24, 36, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.glass-input:focus {
+  border-color: rgba(0, 191, 255, 0.45);
+  box-shadow: 0 0 0 1px rgba(0, 191, 255, 0.15);
+}
+
+.glass-header {
+  background: rgba(9, 10, 15, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.glass-divider {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Clean Form Range Input */
+.cyber-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  height: 6px;
+  outline: none;
+}
+.cyber-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00bfff;
+  border: 2px solid #090a0f;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.cyber-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #38bdf8;
+}
+
+/* Launch room primary action styling */
+.launch-room-btn {
+  background: #00bfff;
+  color: #090a0f;
+  font-weight: 700;
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+.launch-room-btn:hover:not(:disabled) {
+  background: #38bdf8;
+  box-shadow: 0 4px 20px rgba(0, 191, 255, 0.4);
+}
+.launch-room-btn:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+/* Cloudflare Turnstile wrapper */
+.turnstile-wrapper {
+  width: 100%;
+  max-width: 320px;
+  min-height: 65px;
+  margin: 12px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 20;
+}
+
+.turnstile-wrapper iframe {
+  max-width: 100%;
+}
+
+/* Hide number input spinners */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Smooth Touch and Performance Rules */
+.overflow-y-auto,
+.overflow-y-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-anchor: none;
+}
+
+button, a, input, select, textarea, [role="button"] {
+  touch-action: manipulation;
+}
+
+/* Typing cursor */
+.typing-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: #00bfff;
+  margin-left: 4px;
+  animation: blink-cursor 1s steps(2, start) infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
